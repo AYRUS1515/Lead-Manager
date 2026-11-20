@@ -73,7 +73,7 @@ MERU TECH/
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_REPOSITORY_URL
+git clone https://github.com/AYRUS1515/Lead-Manager.git
 cd "MERU TECH"
 ```
 
@@ -154,3 +154,6 @@ python -m pytest -v
 ## Developer
 
 Developed as a full-stack development screening assignment for Meru Technosoft Pvt. Ltd.
+## Application Preview
+
+![Lead Manager Dashboard](screenshots/dashboard.png)
