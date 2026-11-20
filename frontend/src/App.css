@@ -85,7 +85,9 @@ select {
   border: 1px solid #dce1e9;
   border-radius: 7px;
   font-size: 14px;
-  background: white;
+  background: #ffffff;
+  color: #202938;
+  color-scheme: light;
 }
 
 input:focus,
@@ -180,7 +182,7 @@ th {
   color: #7046b8;
 }
 
-.status.converted {
+.status.lost {
   background: #dff6e9;
   color: #21834c;
 }

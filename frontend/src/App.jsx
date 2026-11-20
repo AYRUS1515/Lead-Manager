@@ -11,7 +11,7 @@ const initialForm = {
   phone: "",
   company: "",
   source: "",
-  status: "New",
+  status: "",
 };
 
 function App() {
@@ -135,8 +135,8 @@ function App() {
     (lead) => lead.status === "Contacted"
   ).length;
 
-  const convertedLeads = leads.filter(
-    (lead) => lead.status === "Converted"
+  const lostLeads = leads.filter(
+    (lead) => lead.status === "Lost"
   ).length;
 
   return (
@@ -168,8 +168,8 @@ function App() {
           </div>
 
           <div className="stat-card">
-            <span>Converted</span>
-            <h2>{convertedLeads}</h2>
+            <span>Lost</span>
+            <h2>{lostLeads}</h2>
           </div>
         </section>
 
@@ -228,11 +228,15 @@ function App() {
                 name="status"
                 value={form.status}
                 onChange={handleChange}
+                required
               >
+                <option value="" disabled>
+                  Status
+                </option>
                 <option value="New">New</option>
                 <option value="Contacted">Contacted</option>
                 <option value="Qualified">Qualified</option>
-                <option value="Converted">Converted</option>
+                <option value="Lost">Lost</option>
               </select>
             </div>
 
@@ -281,7 +285,7 @@ function App() {
                 <option value="New">New</option>
                 <option value="Contacted">Contacted</option>
                 <option value="Qualified">Qualified</option>
-                <option value="Converted">Converted</option>
+                <option value="Lost">Lost</option>
               </select>
             </div>
           </div>

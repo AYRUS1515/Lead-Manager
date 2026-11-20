@@ -8,7 +8,7 @@ from sqlalchemy.exc import SQLAlchemyError
 
 api = Blueprint("api", __name__)
 
-ALLOWED_STATUSES = {"New", "Contacted", "Qualified", "Converted"}
+ALLOWED_STATUSES = {"New", "Contacted", "Qualified", "Lost"}
 
 ALLOWED_FIELDS = {
     "name", "email", "phone", "company", "source", "status"
@@ -79,7 +79,7 @@ def validate_lead_data(data, existing_lead=None):
     )
 
     if not isinstance(status, str) or status not in ALLOWED_STATUSES:
-        return None, "Invalid status. Choose New, Contacted, Qualified, or Converted"
+        return None, "Invalid status. Choose New, Contacted, Qualified, or Lost"
 
     cleaned["status"] = status
 
