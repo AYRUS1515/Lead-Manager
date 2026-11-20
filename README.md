@@ -1,12 +1,13 @@
-
 # Lead Manager
 
-A full-stack Lead Management System developed as part of the Meru Technosoft Pvt. Ltd. Full Stack Developer screening assignment.
+A full-stack Lead Management System developed as part of the **Meru Technosoft Pvt. Ltd. Full Stack Developer screening assignment**.
+
+Lead Manager helps users manage business leads through a simple dashboard with lead creation, updating, searching, filtering and deletion.
 
 ## Features
 
-- Add new leads
-- View all leads
+- Add new leads with personal and company information
+- View all leads in a structured table
 - Edit existing lead details
 - Update lead status
 - Delete leads with confirmation
@@ -15,6 +16,7 @@ A full-stack Lead Management System developed as part of the Meru Technosoft Pvt
 - Frontend and backend validation
 - Duplicate email prevention
 - REST API integration
+- Dashboard statistics
 - Automated backend testing
 
 ## Technology Stack
@@ -44,47 +46,63 @@ A full-stack Lead Management System developed as part of the Meru Technosoft Pvt
 ## Project Structure
 
 ```text
-MERU TECH/
-|
-|-- frontend/
-|   |-- src/
-|   |-- package.json
-|
-|-- backend/
-|   |-- app/
-|   |   |-- __init__.py
-|   |   |-- models.py
-|   |   |-- routes.py
-|   |
-|   |-- tests/
-|   |   |-- conftest.py
-|   |   |-- test_leads.py
-|   |
-|   |-- config.py
-|   |-- run.py
-|   |-- requirements.txt
-|
-|-- .gitignore
-|-- README.md
+Lead-Manager/
+│
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   └── main.jsx
+│   └── package.json
+│
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   └── routes.py
+│   │
+│   ├── tests/
+│   │   ├── conftest.py
+│   │   └── test_leads.py
+│   │
+│   ├── config.py
+│   ├── run.py
+│   └── requirements.txt
+│
+├── screenshots/
+│   └── dashboard.png
+│
+├── .gitignore
+└── README.md
 ```
 
 ## Installation and Setup
 
-### 1. Clone the repository
+### Prerequisites
+
+- Python 3.10 or later
+- Node.js and npm
+- Git
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/AYRUS1515/Lead-Manager.git
-cd "MERU TECH"
+
+cd Lead-Manager
 ```
 
 ### 2. Backend Setup
 
-```bash
+Open a terminal and run:
+
+```powershell
 cd backend
 
 python -m venv venv
 
-venv\Scripts\activate
+.\venv\Scripts\Activate.ps1
 
 pip install -r requirements.txt
 
@@ -111,14 +129,16 @@ Frontend URL:
 
 http://localhost:5173
 
+Keep both frontend and backend servers running while using the application.
+
 ## API Endpoints
 
 | Method | Endpoint | Description |
 |---|---|---|
-| GET | /api/leads | Retrieve all leads |
-| POST | /api/leads | Create a new lead |
-| PUT | /api/leads/{id} | Update a lead |
-| DELETE | /api/leads/{id} | Delete a lead |
+| GET | `/api/leads` | Retrieve all leads |
+| POST | `/api/leads` | Create a new lead |
+| PUT | `/api/leads/{id}` | Update an existing lead |
+| DELETE | `/api/leads/{id}` | Delete a lead |
 
 ## Lead Information
 
@@ -132,12 +152,12 @@ Each lead contains:
 - Source
 - Status
 
-Allowed statuses:
+### Allowed Lead Statuses
 
 - New
 - Contacted
 - Qualified
-- Converted
+- Lost
 
 ## Running Automated Tests
 
@@ -147,13 +167,37 @@ From the backend directory:
 python -m pytest -v
 ```
 
-## Current Test Results
+The backend test suite previously completed successfully with **8 passing tests**.
 
-8 automated backend tests passed.
+## Assumptions
 
-## Developer
+- Each lead must have a name, email and phone number.
+- Email addresses must be valid and unique.
+- A lead can have one of four statuses: New, Contacted, Qualified or Lost.
+- SQLite is used for local data persistence.
+- Authentication is not included in the current implementation.
 
-Developed as a full-stack development screening assignment for Meru Technosoft Pvt. Ltd.
+## Future Improvements
+
+- User authentication and role-based access
+- Pagination and sorting
+- Advanced search and filtering
+- Dashboard charts and analytics
+- Cloud database integration
+- Live deployment
+
 ## Application Preview
 
 ![Lead Manager Dashboard](screenshots/dashboard.png)
+
+## What I'm Proud Of
+
+I built this application by integrating a React frontend with a Python Flask backend and SQLite database. One of the challenging aspects was implementing CRUD operations, API validation and frontend-backend communication. This project helped me understand how different components of a full-stack application work together.
+
+## Developer
+
+Developed by **Surya S**
+
+Full Stack Development | Computer Science and Engineering
+
+GitHub: https://github.com/AYRUS1515
