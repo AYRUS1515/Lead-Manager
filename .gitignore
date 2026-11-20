@@ -1,0 +1,28 @@
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+.pytest_cache/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+instance/
+
+# Environment variables
+.env
+.env.*
+
+# React / Node
+node_modules/
+dist/
+npm-debug.log*
+
+# Editor and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
